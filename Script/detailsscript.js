@@ -26,9 +26,9 @@ fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
     const row = document.getElementById("rowDettaglio");
     row.classList.add("row");
     const col8 = document.createElement("div");
-    col8.classList.add("col-12", "col-md-8");
+    col8.classList.add("col-12", "col-md-6");
     const col4 = document.createElement("div");
-    col4.classList.add("col-12", "col-md-4");
+    col4.classList.add("col-12", "col-md-6");
     const marca = document.createElement("h2");
     marca.innerText = product.brand;
     const descrizione = document.createElement("p");
