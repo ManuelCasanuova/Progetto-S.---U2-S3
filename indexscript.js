@@ -40,7 +40,7 @@ fetch(URL, {
       btnGroup.classList.add("btn-group");
       const modifyBtn = document.createElement("button");
       modifyBtn.type = "button";
-      modifyBtn.classList.add("btn", "btn-sm", "btn btn-primary");
+      modifyBtn.classList.add("btn", "btn-sm", "btn", "btn-primary");
       modifyBtn.innerText = "Modifica prodotto";
       const detailsBtn = document.createElement("button");
       detailsBtn.type = "button";
@@ -61,7 +61,4 @@ fetch(URL, {
   })
   .catch((err) => {
     console.dir(err);
-    // isLoading(false);
-
-    generateAlert(err.message);
   });

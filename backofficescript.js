@@ -63,9 +63,10 @@ form.onsubmit = function (event) {
     generateAlert("Compila correttamente tutti i campi del form!");
     return;
   }
-
+  console.log(JSON.stringify(newProduct));
   fetch(URL, {
     method: productId ? "PUT" : "POST",
+
     body: JSON.stringify(newProduct),
     headers: {
       "Content-Type": "application/json",
