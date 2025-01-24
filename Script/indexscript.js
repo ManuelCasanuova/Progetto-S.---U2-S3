@@ -21,7 +21,7 @@ fetch(URL, {
       const col = document.createElement("div");
       col.classList.add("col");
       const card = document.createElement("div");
-      card.classList.add("card");
+      card.classList.add("card", "my-3");
       const cardBody = document.createElement("div");
       cardBody.classList.add("card-body");
       const img = document.createElement("img");
