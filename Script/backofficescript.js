@@ -8,27 +8,31 @@ const URL = productId
 
 window.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submit-btn");
-  const subtitle = document.querySelector("h2 + h5");
+  const subtitle = document.querySelector("h5");
   const delBtn = document.getElementById("delete-btn");
 
   if (productId) {
     submitBtn.innerText = "Modifica prodotto";
     submitBtn.classList.add("btn-success");
-    subtitle.innerText = "— Modifica prodotto";
+    subtitle.innerText = "Modifica il prodotto";
 
     delBtn.classList.remove("d-none");
     delBtn.onclick = handleDelete;
 
-    fetch(URL);
-    then((resp) => {
-      if (resp.ok) {
-        return resp.json();
+    fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzkzNTEyY2I3NDcwMTAwMTU4YjJhYzUiLCJpYXQiOjE3Mzc3MDc4MjAsImV4cCI6MTczODkxNzQyMH0.6xr86aB2GYQ89d5Q2JRGZDx9V2FMSz1GTclfEH7ed-w",
+      },
+    });
+    then((response) => {
+      if (response.ok) {
+        return response.json();
       } else {
         throw new Error("Errore durante il recupero del prodotto");
       }
     }).then((product) => {
-      //console.log(product);
-
       form.elements.name.value = product.name;
       form.elements.description.value = product.description;
       form.elements.brand.value = product.brand;
@@ -37,8 +41,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     submitBtn.innerText = "Aggiungi prodotto";
-    submitBtn.classList.add("btn-primary");
-    subtitle.innerText = "— Crea nuovo prodotto";
+    submitBtn.classList.add("btn-warning", "mb-5");
+    subtitle.innerText = "Crea nuovo prodotto";
   }
 });
 
@@ -53,16 +57,6 @@ form.onsubmit = function (event) {
     price: parseFloat(form.elements.price.value),
   };
 
-  if (
-    !newProduct.name ||
-    !newProduct.description ||
-    !newProduct.brand ||
-    !newProduct.imageUrl ||
-    isNaN(newProduct.price)
-  ) {
-    generateAlert("Compila correttamente tutti i campi del form!");
-    return;
-  }
   console.log(JSON.stringify(newProduct));
   fetch(URL, {
     method: productId ? "PUT" : "POST",
