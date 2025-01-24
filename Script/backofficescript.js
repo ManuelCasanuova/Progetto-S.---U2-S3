@@ -1,7 +1,7 @@
 const form = document.getElementById("product-form");
 
 const params = new URLSearchParams(window.location.search);
-const productId = params.get("appId");
+const productId = params.get("productId");
 const URL = productId
   ? "https://striveschool-api.herokuapp.com/api/product/" + productId
   : "https://striveschool-api.herokuapp.com/api/product/";

@@ -46,6 +46,9 @@ fetch(URL, {
       detailsBtn.type = "button";
       detailsBtn.classList.add("btn", "btn-sm", "btn-outline-primary");
       detailsBtn.innerText = "Dettagli prodotto";
+      detailsBtn.onclick = () => {
+        window.location.assign("./details.html?productId=" + product._id);
+      };
 
       row.appendChild(col);
       col.appendChild(card);
