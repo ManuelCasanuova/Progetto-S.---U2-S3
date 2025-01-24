@@ -8,13 +8,13 @@ const URL = productId
 
 window.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submit-btn");
-  const subtitle = document.querySelector("h5");
+  const title = document.querySelector("h5");
   const delBtn = document.getElementById("delete-btn");
 
   if (productId) {
     submitBtn.innerText = "Modifica prodotto";
     submitBtn.classList.add("btn-success");
-    subtitle.innerText = "Modifica il prodotto";
+    title.innerText = "Modifica il prodotto";
 
     delBtn.classList.remove("d-none");
     delBtn.onclick = handleDelete;
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
   } else {
     submitBtn.innerText = "Aggiungi prodotto";
     submitBtn.classList.add("btn-warning", "mb-5");
-    subtitle.innerText = "Crea nuovo prodotto";
+    title.innerText = "Crea nuovo prodotto";
   }
 });
 

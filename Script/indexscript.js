@@ -41,7 +41,7 @@ fetch(URL, {
 
       const modifyBtn = document.createElement("button");
       modifyBtn.type = "button";
-      modifyBtn.classList.add("btn", "btn-sm", "btn-outline-primary");
+      modifyBtn.classList.add("btn", "btn-sm", "btn-outline-warning");
       modifyBtn.innerText = "Modifica prodotto";
 
       modifyBtn.addEventListener("click", function () {

@@ -27,7 +27,7 @@ a {
   padding-top: 70px;
   margin: 30px 0;
   font-family: "Pacifico", serif;
-  color: yellow;
+  color: #ffc107;
 }
 
 #hero h1 {
@@ -40,4 +40,14 @@ a {
 
 .card img {
   max-height: 204px;
+}
+
+footer ul li,
+a {
+  display: inline-block;
+  color: white;
+}
+
+footer ul {
+  padding: 0;
 }

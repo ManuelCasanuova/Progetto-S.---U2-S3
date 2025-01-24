@@ -31,8 +31,10 @@ fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
     col4.classList.add("col-12", "col-md-6");
     const marca = document.createElement("h2");
     marca.innerText = product.brand;
+    marca.classList.add("text-dark");
     const descrizione = document.createElement("p");
     descrizione.innerText = product.description;
+    descrizione.classList.add("text-dark");
     const prezzo = document.createElement("p");
     prezzo.classList.add("display-6", "text-success");
     prezzo.innerText = "€ " + product.price;
