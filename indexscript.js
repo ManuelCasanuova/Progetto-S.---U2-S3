@@ -14,4 +14,8 @@ fetch(URL, {
       throw new Error();
     }
   })
-  .then((pexelsData) => {});
+  .then((productsData) => {
+    productsData.array.forEach((product) => {
+      const col = document.createElement("div");
+    });
+  });
