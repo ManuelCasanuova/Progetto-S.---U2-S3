@@ -33,19 +33,23 @@ fetch(URL, {
       title.innerText = product.name;
       const cardText = document.createElement("p");
       cardText.classList.add("card-text");
-      cardText.innerText = product.price;
+      cardText.innerText = "€ " + product.price;
       const btnContainer = document.createElement("div");
       btnContainer.classList.add("d-flex", "justify-content-between", "align-items-center");
       const btnGroup = document.createElement("div");
       btnGroup.classList.add("btn-group");
       const modifyBtn = document.createElement("button");
       modifyBtn.type = "button";
-      modifyBtn.classList.add("btn", "btn-sm", "btn", "btn-primary");
+      modifyBtn.classList.add("btn", "btn-sm", "btn-outline-primary");
       modifyBtn.innerText = "Modifica prodotto";
+
+      modifyBtn.addEventListener("click", function () {
+        window.location.assign("./backoffice.html?productId=" + product._id);
+      });
 
       const detailsBtn = document.createElement("button");
       detailsBtn.type = "button";
-      detailsBtn.classList.add("btn", "btn-sm", "btn-outline-primary");
+      detailsBtn.classList.add("btn", "btn-sm", "btn", "btn-primary");
       detailsBtn.innerText = "Dettagli prodotto";
       detailsBtn.onclick = () => {
         window.location.assign("./details.html?productId=" + product._id);
