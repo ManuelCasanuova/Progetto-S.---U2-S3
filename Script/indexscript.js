@@ -35,9 +35,10 @@ fetch(URL, {
       cardText.classList.add("card-text");
       cardText.innerText = "€ " + product.price;
       const btnContainer = document.createElement("div");
-      btnContainer.classList.add("d-flex", "justify-content-between", "align-items-center");
+      btnContainer.classList.add("d-flex", "justify-content-between", "align-items-center", "d-wrap");
       const btnGroup = document.createElement("div");
       btnGroup.classList.add("btn-group");
+
       const modifyBtn = document.createElement("button");
       modifyBtn.type = "button";
       modifyBtn.classList.add("btn", "btn-sm", "btn-outline-primary");
@@ -51,6 +52,7 @@ fetch(URL, {
       detailsBtn.type = "button";
       detailsBtn.classList.add("btn", "btn-sm", "btn", "btn-primary");
       detailsBtn.innerText = "Dettagli prodotto";
+
       detailsBtn.onclick = () => {
         window.location.assign("./details.html?productId=" + product._id);
       };
