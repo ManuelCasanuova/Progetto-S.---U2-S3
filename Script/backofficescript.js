@@ -77,11 +77,11 @@ form.onsubmit = function (event) {
     })
     .then((createProd) => {
       if (!productId) {
-        alert("Il prodotto " + createProd._id + " creato correttamente, lo potrai visualizzare nella home");
+        alert("Il prodotto " + createProd.name + " creato correttamente, lo potrai visualizzare nella home");
 
         form.reset();
       } else {
-        alert("Il prodotto " + createProd._id + " modificato correttamente!");
+        alert("Il prodotto " + createProd.name + " modificato correttamente!");
       }
     });
 };
@@ -103,7 +103,7 @@ const handleDelete = () => {
         }
       })
       .then((deletedProd) => {
-        alert("Il prodotto" + deletedProd.name + "è stato eliminato correttamente");
+        alert("Il prodotto " + deletedProd.name + " è stato eliminato correttamente");
 
         window.location.assign("./index.html");
       })
